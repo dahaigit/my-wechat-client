@@ -9,7 +9,7 @@ let plugins = [DefaultPlugin, ExpirePlugin]
 let sessionStorage = Engine.createStore([SessionStorage], plugins)
 
 let token = {
-  $store: sessionStorage,
+  store: sessionStorage,
   key: 'auth_token',
   // token方进data中
   data: {},
@@ -29,7 +29,7 @@ let token = {
       refresh: refresh,
       expires: expires
     }
-    this.a.$store.set(this.a.key, this.a.data, new Date().getTime() + (1000 * parseInt(expires, 10)))
+    this.a.store.set(this.a.key, this.a.data, new Date().getTime() + (1000 * parseInt(expires, 10)))
     return this.a
   },
 
@@ -39,7 +39,7 @@ let token = {
    */
   get: () => {
     console.log(this)
-    this.a.data = this.a.$store.get(this.a.key)
+    this.a.data = this.a.store.get(this.a.key)
     return this.a
   },
 
@@ -56,7 +56,7 @@ let token = {
    * 清除token
    */
   forget: () => {
-    this.a.$store.remove(this.a.key)
+    this.a.store.remove(this.a.key)
   }
 }
 
