@@ -1,21 +1,22 @@
-# my-wechat-client
+# core-ui
 
-> A Vue.js project
+> Open Source Admin Template
 
 ## Build Setup
 
-``` bash
-# install dependencies
-npm install
+1、安装
+  ``` bash
+  # Windows
+  yarn --no-bin-links
 
-# serve with hot reload at localhost:8080
-npm run dev
+  #mac/linux
+  yarn [install]
+  ```
+  ```
+2、配置
+  拷贝config/dev.env.develop.js 成 config/dev.env.js并配置
 
-# build for production with minification
-npm run build
+3、运行
+  yarn dev
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

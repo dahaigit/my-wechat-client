@@ -7,9 +7,11 @@ import router from './router'
 // 手动引入
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-Vue.use(ElementUI)
 import Http from '@/libs/http'
 import Token from '@/libs/token'
+
+Vue.use(ElementUI)
+
 Vue.prototype.$http = Http
 Vue.prototype.$token = Token
 
