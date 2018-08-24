@@ -4,6 +4,17 @@
   </div>
 </template>
 <script>
-  let params = this.$route.params
-  console.log(params)
+
+  export default {
+    data: {},
+    created: function(){
+      this.goToAuth()
+    },
+    methods: {
+      goToAuth: function () {
+        let params = this.$route.params
+        console.log(params)
+      }
+    },
+  }
 </script>
