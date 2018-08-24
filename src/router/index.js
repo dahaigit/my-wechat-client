@@ -5,7 +5,6 @@ import Home from '@/views/home'
 import userInfo from '@/views/userInfo'
 import Token from '@/libs/token'
 import login from '@/views/login'
-import Auth from '@/views/auth'
 
 Vue.use(Router)
 
@@ -26,10 +25,6 @@ const router = new Router({
     {
       path: '/login',
       component: login
-    },
-    {
-      path: '/auth',
-      component: Auth
     }
   ]
 })
