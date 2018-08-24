@@ -4,8 +4,8 @@ import HelloWorld from '@/components/HelloWorld'
 import Home from '@/views/home'
 import userInfo from '@/views/userInfo'
 import Token from '@/libs/token'
-import Http from '@/libs/http'
 import login from '@/views/login'
+import Auth from '@/views/auth'
 
 Vue.use(Router)
 
@@ -26,6 +26,10 @@ const router = new Router({
     {
       path: '/login',
       component: login
+    },
+    {
+      path: '/auth',
+      component: Auth
     }
   ]
 })
@@ -37,13 +41,6 @@ let loggedIn = () => {
   } else {
     return true
   }
-}
-
-let mockLogin = () => {
-  // 发起授权
-  Http.get('api/client/start/oauth').then(response => {
-
-  })
 }
 
 // 路由守卫
