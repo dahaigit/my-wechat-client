@@ -46,7 +46,7 @@ let loggedIn = () => {
 // 路由守卫
 router.beforeEach((to, from, next) => {
   // 用户没有登陆则跳转到登陆界面
-  if (!loggedIn() && to.path != '/login') {
+  if (!loggedIn() && to.path != '/login' && to.path != '/auth') {
     next({
       path: '/login'
     })
