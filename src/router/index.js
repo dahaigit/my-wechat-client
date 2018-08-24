@@ -32,7 +32,6 @@ const router = new Router({
 
 // 通过token，判断用户是否登录
 let loggedIn = () => {
-  console.log(Token)
   if (Token.get().getAuthAccess() === '') {
     return false
   } else {

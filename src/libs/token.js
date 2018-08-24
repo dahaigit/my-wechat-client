@@ -5,11 +5,11 @@ import ExpirePlugin from 'store/plugins/expire'
 
 let plugins = [DefaultPlugin, ExpirePlugin]
 
-// 使用store用来存储token
+// 使用$store用来存储token
 let sessionStorage = Engine.createStore([SessionStorage], plugins)
 
 let token = {
-  store: sessionStorage,
+  $store: sessionStorage,
   key: 'auth_token',
   // token方进data中
   data: {},
@@ -22,41 +22,41 @@ let token = {
    * expires 有效期，单位秒
    * return obj
    */
-  set: (type, access, refresh = '', expires = 999999) => {
-    this.a.data = {
+  set: function(type, access, refresh = '', expires = 999999) {
+    this.data = {
       type: type,
       access: access,
       refresh: refresh,
       expires: expires
     }
-    this.a.store.set(this.a.key, this.a.data, new Date().getTime() + (1000 * parseInt(expires, 10)))
-    return this.a
+    this.$store.set(this.key, this.data, new Date().getTime() + (1000 * parseInt(expires, 10)))
+    return this
   },
 
   /**
    * 读取token data数据
    * return obj
    */
-  get: () => {
+  get: function() {
     console.log(this)
-    this.a.data = this.a.store.get(this.a.key)
-    return this.a
+    this.data = this.$store.get(this.key)
+    return this
   },
 
   /**
    * 获取header需要的token格式
    * return string
    */
-  getAuthAccess: () => {
-    let data = this.a.data
+  getAuthAccess: function() {
+    let data = this.data
     return data ? data.type + ' ' + data.access : ''
   },
 
   /**
    * 清除token
    */
-  forget: () => {
-    this.a.store.remove(this.a.key)
+  forget: function() {
+    this.$store.remove(this.key)
   }
 }
 

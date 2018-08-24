@@ -15,7 +15,7 @@ Vue.use(ElementUI)
 Vue.prototype.$http = Http
 Vue.prototype.$token = Token
 
-Vue.config.productionTip = false
+// Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
