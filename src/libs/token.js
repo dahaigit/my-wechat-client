@@ -22,7 +22,7 @@ let token = {
    * expires 有效期，单位秒
    * return obj
    */
-  set: function(type, access, refresh = '', expires = 999999) {
+  set: function(access, refresh = '',type = 'Bearer', expires = 999999) {
     this.data = {
       type: type,
       access: access,

@@ -9,11 +9,13 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import Http from '@/libs/http'
 import Token from '@/libs/token'
+import Util from '@/libs/util'
 
 Vue.use(ElementUI)
 
 Vue.prototype.$http = Http
 Vue.prototype.$token = Token
+Vue.prototype.$util = Util
 
 // Vue.config.productionTip = false
 
