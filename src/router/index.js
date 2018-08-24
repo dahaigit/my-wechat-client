@@ -12,7 +12,10 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      component: Home
+      component: Home,
+      meta: {
+        title: '首页'
+      }
     },
     {
       path: '/hello',
@@ -20,11 +23,17 @@ const router = new Router({
     },
     {
       path: '/user/info',
-      component: userInfo
+      component: userInfo,
+      meta: {
+        title: '个人中心'
+      }
     },
     {
       path: '/login',
-      component: login
+      component: login,
+      meta: {
+        title: '正在授权登陆请稍等...'
+      }
     }
   ]
 })
