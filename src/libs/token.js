@@ -38,7 +38,6 @@ let token = {
    * return obj
    */
   get: function() {
-    console.log(this)
     this.data = this.$store.get(this.key)
     return this
   },

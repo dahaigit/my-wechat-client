@@ -12,7 +12,7 @@
     },
     methods: {
       goToAuth: function () {
-        let params = this.$route.params
+        let params = this.$route.query.code
         console.log(params)
       }
     },
