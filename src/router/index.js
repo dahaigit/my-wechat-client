@@ -49,6 +49,7 @@ let loggedIn = () => {
 
 // 路由守卫
 router.beforeEach((to, from, next) => {
+  document.title = to.meta.title ? to.meta.title : '大海测试号'
   // 用户没有登陆则跳转到登陆界面
   if (!loggedIn() && to.path != '/login') {
     next({
